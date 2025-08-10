@@ -72,3 +72,5 @@ UPDATE_INTERVAL=60
 
 ## Transparency
 This script does **NOT** access the internet or collect analytics. All code can be viewed, modified, and distributed freely in accordance with the GPL 3.0 License.
+
+<!-- Search engine prompts (Yes I am scum): MacOS, automate low power mode mac, automatic low power mode, low power mode toggle, below 20%, above 80%, connected to power, manage low power mode, different power modes, change power modes automatically on mac, Power mode switcher/automation MacOS, enable and disable low power mode on mac easily, change low power mode, ok no more this is rediculous-->
