@@ -5,6 +5,9 @@ These are the current functions of the script:
 - Turn Low Power Mode On/Off Automatically when battery reaches specified % thresholds
 - Toggle for deactivating Low Power Mode when connected to AC power
 
+#
+Note: The script by default runs **Every 60 Seconds**. This is not a bug, and you can exchange shorter timeframes for increased battery usage in the config.
+
 ## Installation
 
 Copy this code into your terminal:
@@ -12,6 +15,7 @@ Copy this code into your terminal:
 curl -fsSL https://raw.githubusercontent.com/IanuReeves/Mac-Low-Power-Script/main/install.sh | sudo bash
 ````
 And voila! Low power mode should automatically activate when power is low!
+
 #
 If you want to manually install, either:
 
@@ -36,7 +40,7 @@ Or Manually remove it by deleting the Files found in the file paths mentioned in
 
 Config can be found in `/usr/local/etc/lowpowermode.conf` after installation. Defaults are 20% and 80% limits, with AC Power toggle set to True (1).
 
-*Note: Update interval has a large impact on the script's battery consumption, albeit negligible.*
+*Note: After Editing your Configuration, you must Restart to apply changes.*
 ```
 # ======================================
 # Low Power Mode Config
@@ -58,9 +62,11 @@ DISABLE_THRESHOLD=80
 # ======================================
 
 # How often (in seconds) the script runs when scheduled with launchd
+# Note: Update interval has a large impact on the script's battery consumption, albeit negligible
 UPDATE_INTERVAL=60
 ```
 ## Issues
+
 *"Why Can't I Edit the Config File?"*
 - A fix will probably be pushed soon, but for now, best bet is to either run your application in sudo, or move the file to Desktop (CMD+C to copy, OPT+CMD+V to Move), and accept your Mac's request to make changes. Once that happens, you can modify it freely. Just make sure to put it back in the usr/local/etc folder.
 
