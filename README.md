@@ -5,7 +5,9 @@ These are the current functions of the script:
 - Turn Low Power Mode On/Off Automatically when battery reaches specified % thresholds
 - Toggle for deactivating Low Power Mode when connected to AC power
 
-## Install
+## Installation Methods
+
+### Quick Install
 
 Copy this code into your terminal:
 
@@ -13,11 +15,27 @@ Copy this code into your terminal:
 sudo bash -c ' mkdir -p /usr/local/bin /usr/local/etc curl -fsSL https://raw.githubusercontent.com/IanuReeves/Mac-Low-Power Script/main/lowpowermode_toggle.sh -o /usr/local/bin/lowpowermode_toggle.sh chmod +x /usr/local/bin/lowpowermode_toggle.sh curl -fsSL https://raw.githubusercontent.com/IanuReeves/Mac-Low-Power-Script/main/lowpowermode.conf -o /usr/local/etc/lowpowermode.conf curl -fsSL https://raw.githubusercontent.com/IanuReeves/Mac-Low-Power-Script/main/com.lowpowermode.toggle.plist -o /Library/LaunchDaemons/com.lowpowermode.toggle.plist chmod 644 /Library/LaunchDaemons/com.lowpowermode.toggle.plist launchctl unload /Library/LaunchDaemons/com.lowpowermode.toggle.plist 2>/dev/null || true launchctl load /Library/LaunchDaemons/com.lowpowermode.toggle.plist '
 ````
 And voila! Low power mode should automatically activate when power is low!
-# 
+
+### Manual Install
 For Manual installation, Download Git Repo, and place the three files in the Scripts folder in the following locations:
 - `/usr/local/bin/lowpowermode_toggle.sh`
 - `/usr/local/etc/lowpowermode.conf`
 - `/Library/LaunchDaemons/com.lowpowermode.toggle.plist`
+
+## Removing/Uninstalling the Script
+
+*I used the script to destroy the script*
+
+Uninstall by pasting this command into terminal:
+````
+sudo launchctl bootout system /Library/LaunchDaemons/com.lowpowermode.toggle.plist sudo rm /Library/LaunchDaemons/com.lowpowermode.toggle.plist /usr/local/bin/lowpowermode_toggle.sh /usr/etc/lowpowermode.conf
+````
+
+Or run this If the previous Script Fails (for older MacOS systems)
+````
+sudo launchctl unload -w /Library/LaunchDaemons/com.lowpowermode.toggle.plist sudo rm /Library/LaunchDaemons/com.lowpowermode.toggle.plist /usr/local/bin/lowpowermode_toggle.sh /usr/etc/lowpowermode.conf
+
+````
 
 ## Configuration
 
@@ -48,7 +66,7 @@ DISABLE_THRESHOLD=80
 UPDATE_INTERVAL=60
 ```
 ## Issues
-If MacOS 'blocks' the script from running in the background, please open Privacy and Security in Settings, and allow the program to be used. I didn't come across this issue in any of my tests, however if the script still doesn't work, attempt to re-enable the background process in the Login Items and Extensions page in Settings
+If MacOS 'blocks' the script from running in the background, please open Privacy and Security in Settings, and allow the program to be used. I didn't come across this issue in any of my tests, however if the script still doesn't work, attempt to re-enable the background process in the Login Items and Extensions page in Settings.
 
 ## Transparency
 This script does **NOT** access the internet or collect analytics. All code can be viewed, modified, and distributed freely in accordance with the GPL 3.0 License.
