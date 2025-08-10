@@ -1,9 +1,9 @@
-# Mac-Low-Power-Script
+# Mac Low Power Script
 This is a simple script made to combat some of the many issues found in Mac's "Low Power Mode" setting.
-These are currently the only functions of the script:
+These are the current functions of the script:
 
-- Turn Low Power Mode On/Off Automatically throuhg battery % threshold
-- Toggle AC Power deactivating Low Power Mode
+- Turn Low Power Mode On/Off Automatically when battery reaches specified % thresholds
+- Toggle for deactivating Low Power Mode when connected to AC power
 
 ## Install
 
@@ -22,6 +22,8 @@ For Manual installation, Download Git Repo, and place the three files in the Scr
 ## Configuration
 
 Config can be found in `/usr/local/etc/lowpowermode.conf` after installation. Defaults are 20% and 80% limits, with AC Power toggle set to True (1).
+
+*Update interval has a large impact on the script's battery consumption, albeit negligible.*
 ```
 # ======================================
 # Low Power Mode Config
@@ -45,4 +47,8 @@ DISABLE_THRESHOLD=80
 # How often (in seconds) the script runs when scheduled with launchd
 UPDATE_INTERVAL=60
 ```
-Update interval has a large impact on the script's battery consumption, so change this if you need a negligible impact on battery life
+## Issues
+If MacOS 'blocks' the script from running in the background, please open Privacy and Security in Settings, and allow the program to be used. I didn't come across this issue in any of my tests, however if the script still doesn't work, attempt to re-enable the background process in the Login Items and Extensions page in Settings
+
+## Transparency
+This script does **NOT** access the internet or collect analytics. All code can be viewed, modified, and distributed freely in accordance with the GPL 3.0 License.
