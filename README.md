@@ -61,6 +61,9 @@ DISABLE_THRESHOLD=80
 UPDATE_INTERVAL=60
 ```
 ## Issues
+*"Why Can't I Edit the Config File?"*
+- A fix will probably be pushed soon, but for now, best bet is to either run your application in sudo, or move the file to Desktop (CMD+C to copy, OPT+CMD+V to Move), and accept your Mac's request to make changes. Once that happens, you can modify it freely. Just make sure to put it back in the usr/local/etc folder.
+
 *"Help! MacOS blocked the Script"*
 - Although I didn't come across this issue during my testing, if MacOS 'blocks' the script from running in the background, it's simply due to MacOS's safeguards on unidentified developers. Try opening Privacy and Security in Settings, and allow the program to be used. If the script still doesn't work, attempt to re-enable the background process in the Login Items and Extensions page in Settings.
 
