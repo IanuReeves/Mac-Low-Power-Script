@@ -64,7 +64,7 @@ UPDATE_INTERVAL=60
 *"Help! MacOS blocked the Script"*
 - Although I didn't come across this issue during my testing, if MacOS 'blocks' the script from running in the background, it's simply due to MacOS's safeguards on unidentified developers. Try opening Privacy and Security in Settings, and allow the program to be used. If the script still doesn't work, attempt to re-enable the background process in the Login Items and Extensions page in Settings.
 
-*Why did a bunch of random folders show up in my User Folder?*
+*"Why did a bunch of random folders show up in my User Folder?"*
 - Not sure if this issue's still replicatable, but this means your internet blocked or couldn't find the request to Github after the request to run install.sh was in progress. Either that, or this repo somehow went private, and is returning 404 errors somehow. Feel free to create an issue if you have further info.
 
 ## Transparency
